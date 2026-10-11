@@ -1,0 +1,20 @@
+{
+  "name": "raymond-thomas-portfolio",
+  "version": "1.0.0",
+  "description": "Vibe Coder & Full-Stack AI Engineer Portfolio - Live Interactive Sandboxes (Vercel Ready)",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "vibe-coder",
+    "ai-engineer",
+    "solana",
+    "tee-security",
+    "portfolio",
+    "interactive-sandboxes"
+  ],
+  "author": "Raymond Thomas (@thepros2014)",
+  "license": "MIT"
+}

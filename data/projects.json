@@ -1,0 +1,257 @@
+[
+  {
+    "id": "socialwtf",
+    "name": "social.wtf & Socailwft.apk-",
+    "live_url": "https://socialwtf.wtf",
+    "backup_url": "https://socialwtf.vercel.app",
+    "mobile_url": "https://socailmobile.vercel.app",
+    "repo_url": "https://github.com/RJRC-Digital-Development/social.wtf",
+    "owner": "RJRC-Digital-Development",
+    "owner_type": "organization",
+    "visibility": "private",
+    "category": "Full-Stack Web3 Social & Mobile",
+    "language": "Rust / TypeScript / Android APK",
+    "velocity": "Shipped Web App + Android APK in 1 Week",
+    "has_live_site": true,
+    "sandbox_id": "socialwtf",
+    "description": "Unified decentralized Web3 social ecosystem & creator storefront on Cookie Chain (SVM). Features creator tip jars, non-custodial wallets, and native Android mobile APK build.",
+    "highlights": [
+      "Live production site deployed at socialwtf.wtf",
+      "Full-stack reactive web architecture and custom Android mobile APK build (socailmobile.vercel.app)",
+      "Decentralized creator storefront & micro-tipping on Cookie Chain (SVM)",
+      "Real-time social feeds, state management, and sandboxed Rust contracts"
+    ],
+    "keywords": ["full-stack", "typescript", "android", "mobile", "apk", "react", "svm", "rust", "cookie chain"]
+  },
+  {
+    "id": "cookiejar",
+    "name": "cookie-chain-capp (CookieJar)",
+    "live_url": "https://thepros2014.github.io/cookie-chain-capp/",
+    "repo_url": "https://github.com/thepros2014/cookie-chain-capp",
+    "owner": "thepros2014",
+    "owner_type": "personal",
+    "visibility": "public",
+    "category": "Micro-Bounties & SVM DApps",
+    "language": "HTML / JavaScript / Web3",
+    "velocity": "Shipped in 24 Hours",
+    "has_live_site": true,
+    "sandbox_id": "cookiejar",
+    "description": "Decentralized micro-bounties and community tipping app live on Cookie Chain (SVM). Instant micropayments and community reward distribution.",
+    "highlights": [
+      "Live interactive DApp hosted on GitHub Pages",
+      "Instant micropayments and community reward distribution",
+      "Clean, high-converting interactive frontend with SVM wallet connector"
+    ],
+    "keywords": ["micro-bounties", "svm", "tipping", "web3", "frontend", "dapp"]
+  },
+  {
+    "id": "kracken",
+    "name": "kracken-auto-trading-bot",
+    "live_url": "https://rjrc-digital-development.github.io/kracken-auto-trading-bot/",
+    "repo_url": "https://github.com/RJRC-Digital-Development/kracken-auto-trading-bot",
+    "owner": "RJRC-Digital-Development",
+    "owner_type": "organization",
+    "visibility": "public",
+    "category": "ML Trading & Telegram Automation",
+    "language": "Python / HTML",
+    "velocity": "Shipped in 48 Hours",
+    "has_live_site": true,
+    "sandbox_id": "kracken",
+    "description": "Automated algorithmic trading bot for Kraken.com with Telegram remote controls, web telemetry dashboard, and self-learning ML signal models.",
+    "highlights": [
+      "Live telemetry landing page hosted at rjrc-digital-development.github.io/kracken-auto-trading-bot",
+      "Automated market execution with real-time Kraken API connection",
+      "Self-learning ML signal classifier for risk management"
+    ],
+    "keywords": ["trading bot", "kraken", "telegram", "machine learning", "python", "automation"]
+  },
+  {
+    "id": "signalpost",
+    "name": "signalpost-company-agent",
+    "live_url": "",
+    "repo_url": "https://github.com/thepros2014/signalpost-company-agent",
+    "owner": "thepros2014",
+    "owner_type": "personal",
+    "visibility": "public",
+    "category": "AI Agents & Intelligence",
+    "language": "Python",
+    "velocity": "Shipped in 3 days",
+    "has_live_site": false,
+    "sandbox_id": "signalpost",
+    "description": "Autonomous company intelligence agent with batch runner, state evaluator, and automated data synthesis pipelines.",
+    "highlights": [
+      "Full autonomous agent lifecycle with state machines and evaluator loops",
+      "Automated intelligence gathering, entity analysis, and batch processing",
+      "Modular architecture designed for rapid deployment and scaling"
+    ],
+    "keywords": ["ai agent", "autonomous", "python", "evaluator", "state machine", "batch runner"]
+  },
+  {
+    "id": "builderr",
+    "name": "builderr-trading-agent",
+    "live_url": "",
+    "repo_url": "https://github.com/thepros2014/builderr-trading-agent",
+    "owner": "thepros2014",
+    "owner_type": "personal",
+    "visibility": "public",
+    "category": "AI Agents & Financial Tech",
+    "language": "Python",
+    "velocity": "Zero-to-One Prototype in 4 days",
+    "has_live_site": false,
+    "sandbox_id": "builderr",
+    "description": "Autonomous algorithmic trading agent on the Solana network with real-time signal analysis and automated execution.",
+    "highlights": [
+      "Real-time event processing and algorithmic signal detection",
+      "Solana blockchain integration with high-speed trade routing (<180ms)",
+      "Automated risk management, slippage calculation, and execution monitoring"
+    ],
+    "keywords": ["trading agent", "solana", "crypto", "defi", "python", "automation", "real-time"]
+  },
+  {
+    "id": "t3n",
+    "name": "t3n (TrustGate TEE Security)",
+    "live_url": "",
+    "repo_url": "https://github.com/thepros2014/terminal3-rust-tee-bounty",
+    "owner": "thepros2014",
+    "owner_type": "personal",
+    "visibility": "public",
+    "category": "TEE Security & Web3",
+    "language": "TypeScript / Rust",
+    "velocity": "Shipped for T3 Bounty in 48 Hours",
+    "has_live_site": false,
+    "sandbox_id": "t3n",
+    "description": "TrustGate TEE security verification, cryptographic attestation, and verifiable AI agent policy enforcement in hardware enclaves.",
+    "highlights": [
+      "TEE (Trusted Execution Environment) hardware enclave policy validation",
+      "Cryptographic proof verification for agent autonomous actions",
+      "Production-grade test suite and terminal verification evidence pipeline"
+    ],
+    "keywords": ["tee", "rust", "typescript", "cryptography", "security", "attestation", "policy enforcement"]
+  },
+  {
+    "id": "coinswag",
+    "name": "CoinSwag",
+    "live_url": "",
+    "repo_url": "https://github.com/RJRC-Digital-Development/CoinSwag",
+    "owner": "RJRC-Digital-Development",
+    "owner_type": "organization",
+    "visibility": "public",
+    "category": "Multi-Chain Swap & Privacy",
+    "language": "TypeScript / Python",
+    "velocity": "Enterprise Architecture Shipped in 5 Days",
+    "has_live_site": false,
+    "sandbox_id": "coinswag",
+    "description": "Automated multi-chain crypto swap engine with Monero zero-knowledge privacy hub and instantaneous cross-chain routing.",
+    "highlights": [
+      "Zero-knowledge privacy preservation with non-custodial cross-chain swapping",
+      "Automated liquidity routing across Monero, Bitcoin, and SVM/EVM assets",
+      "High-performance responsive TypeScript/Python engine"
+    ],
+    "keywords": ["monero", "privacy", "zero knowledge", "swap engine", "crypto", "typescript", "cross-chain"]
+  },
+  {
+    "id": "zer0claw",
+    "name": "zer0claw & aegis-solana",
+    "live_url": "",
+    "repo_url": "https://github.com/RJRC-Digital-Development/zer0claw",
+    "owner": "RJRC-Digital-Development",
+    "owner_type": "organization",
+    "visibility": "public",
+    "category": "AI Commerce & Solana WASM Runtime",
+    "language": "Python / Rust / WASM",
+    "velocity": "Rapid Prototype to Production in 4 Days",
+    "has_live_site": false,
+    "sandbox_id": "zer0claw",
+    "description": "Zero-key payment, tax accounting, conversational AI cashier, and Aegis Solana WASM Plugin / Kernel API for sandboxed AI agents.",
+    "highlights": [
+      "Conversational AI cashier handling zero-key digital commerce and automated fulfillment",
+      "Aegis Solana WASM plugin engine tailored for autonomous AI agents",
+      "Kernel-level security primitives and sandboxed runtime execution"
+    ],
+    "keywords": ["ai cashier", "commerce", "solana", "wasm", "rust", "kernel", "ai agent", "plugin", "sandbox"]
+  },
+  {
+    "id": "aibattle",
+    "name": "ai-battle",
+    "live_url": "",
+    "repo_url": "https://github.com/thepros2014/ai-battle",
+    "owner": "thepros2014",
+    "owner_type": "personal",
+    "visibility": "private",
+    "category": "Multi-Model AI Arena & Benchmarking",
+    "language": "C# / Python",
+    "velocity": "Adversarial Engine Shipped in 3 Days",
+    "has_live_site": false,
+    "sandbox_id": "aibattle",
+    "description": "2 paired teams / 4 AI Models challenge system to benchmark LLMs building better products and hardening security.",
+    "highlights": [
+      "Multi-LLM competitive collaboration and adversarial testing",
+      "Automated code generation benchmarking and vulnerability probing",
+      "Orchestrated multi-model interaction pipelines"
+    ],
+    "keywords": ["multi-agent", "llm benchmark", "ai battle", "c#", "adversarial", "evaluation"]
+  },
+  {
+    "id": "bitcoincasino",
+    "name": "bitcoin-casino-aop & bitcoin-casino-2016-v2",
+    "live_url": "",
+    "repo_url": "https://github.com/RJRC-Digital-Development/bitcoin-casino-aop",
+    "owner": "RJRC-Digital-Development",
+    "owner_type": "organization",
+    "visibility": "private",
+    "category": "Web3 Gaming & Cryptographic Systems",
+    "language": "Python / TypeScript",
+    "velocity": "Full Stack Architecture & Seed Engine",
+    "has_live_site": false,
+    "sandbox_id": "bitcoincasino",
+    "description": "Full-scale Bitcoin gaming & provably-fair casino platform with cryptographic seed verification and automated ledger auditing.",
+    "highlights": [
+      "Provably fair cryptographic algorithm using SHA-256 client/server seeds",
+      "High-concurrency realtime game loop with Python and TypeScript",
+      "Automated blockchain deposit/withdrawal ledger tracking"
+    ],
+    "keywords": ["bitcoin", "casino", "gaming", "cryptography", "provably fair", "python", "typescript"]
+  },
+  {
+    "id": "claudebounty",
+    "name": "claude-builders-bounty",
+    "live_url": "",
+    "repo_url": "https://github.com/RJRC-Digital-Development/claude-builders-bounty",
+    "owner": "RJRC-Digital-Development",
+    "owner_type": "organization",
+    "visibility": "public",
+    "category": "Developer Community & Bounty Board",
+    "language": "TypeScript / Next.js",
+    "velocity": "Shipped in 2 Days",
+    "has_live_site": false,
+    "sandbox_id": "claudebounty",
+    "description": "A community bounty board for Claude Code builders — post tasks, claim rewards, build together.",
+    "highlights": [
+      "Collaborative task dispatch and escrow mechanics",
+      "Integration with autonomous coding workflows",
+      "Realtime bounty feed and claim verification"
+    ],
+    "keywords": ["bounty", "claude code", "typescript", "community", "automation"]
+  },
+  {
+    "id": "gamepad",
+    "name": "Gamepad-controlled",
+    "live_url": "",
+    "repo_url": "https://github.com/thepros2014/Gamepad-controlled",
+    "owner": "thepros2014",
+    "owner_type": "personal",
+    "visibility": "public",
+    "category": "Hardware & Offline Cryptography",
+    "language": "Python / HID",
+    "velocity": "Hardware Hack in 48 Hours",
+    "has_live_site": false,
+    "sandbox_id": "gamepad",
+    "description": "Gamepad-controlled cryptographic multitool with offline air-gapped wallet address generator.",
+    "highlights": [
+      "HID controller hardware interface in pure Python",
+      "Offline air-gapped key entropy generation",
+      "Tactile cryptographic hardware security prototype"
+    ],
+    "keywords": ["hardware", "cryptography", "wallet generator", "offline", "python", "gamepad"]
+  }
+]

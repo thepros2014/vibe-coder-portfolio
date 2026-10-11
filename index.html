@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raymond Thomas | Vibe Coder & AI Engineer Portfolio</title>
+  <meta name="description" content="Autonomous AI Agent Architect, Solana/SVM Systems, and Rapid Zero-to-One Prototyper. Featuring live online working sandboxes and deployed production sites.">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="brand">
+        <div class="logo-icon">⚡</div>
+        <div class="brand-text">
+          <h1>RAYMOND THOMAS <span class="accent-text">PORTFOLIO</span></h1>
+          <p class="subtitle">Full-Stack AI Engineer & Vibe Coder | <strong>@thepros2014</strong> & <strong>RJRC-Digital-Development</strong></p>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a href="https://socialwtf.wtf" target="_blank" class="btn btn-live">
+          <span class="live-dot"></span> 🌐 socialwtf.wtf
+        </a>
+        <a href="https://github.com/thepros2014" target="_blank" class="btn btn-secondary">
+          <span class="icon">👤</span> Personal GitHub
+        </a>
+        <a href="https://github.com/RJRC-Digital-Development" target="_blank" class="btn btn-secondary">
+          <span class="icon">🏢</span> Org GitHub
+        </a>
+        <a href="mailto:thepros2014@gmail.com" class="btn btn-primary">
+          <span class="icon">✉️</span> Contact / Hire
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-portfolio">
+      <div class="hero-top-badges">
+        <span class="badge score-high">⚡ High-Agency Vibe Coder</span>
+        <span class="badge" style="background:rgba(139,92,246,0.2); color:#c084fc; border:1px solid #8b5cf6;">📍 Fresno, CA (Remote & Local)</span>
+        <span class="badge" style="background:rgba(16,185,129,0.2); color:#6ee7b7; border:1px solid #10b981;">✓ 100% Shipped & Verifiable</span>
+        <span class="badge" style="background:rgba(6,182,212,0.2); color:#38bdf8; border:1px solid #06b6d4;">☁️ Vercel Edge Hosted</span>
+      </div>
+      <h1 class="hero-title">Idea to Production-Ready Deployment <br><span class="accent-text">In Days, Not Months</span></h1>
+      <p class="hero-subtitle">
+        I architect and engineer autonomous AI multi-agent workflows, high-speed Solana/SVM infrastructure, cryptographic TEE hardware enclaves, and full-stack reactive applications. Every system below—spanning personal projects (<strong>@thepros2014</strong>) and digital development organization builds (<strong>@RJRC-Digital-Development</strong>)—was designed, coded, and deployed directly by me.
+      </p>
+
+      <div class="hero-stat-grid">
+        <div class="hero-stat-box">
+          <div class="hero-stat-val accent-cyan">12</div>
+          <div class="hero-stat-label">Featured Codebases & Systems</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hero-stat-val accent-emerald">3+</div>
+          <div class="hero-stat-label">Live Deployed Production Sites</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hero-stat-val accent-purple">6</div>
+          <div class="hero-stat-label">In-Browser Test-Drive Sandboxes</div>
+        </div>
+        <div class="hero-stat-box">
+          <div class="hero-stat-val" style="color:var(--amber);">2 - 5 Days</div>
+          <div class="hero-stat-label">Average Time-to-Ship Prototype</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Working Sandboxes Station -->
+    <section class="sandbox-station">
+      <div class="station-header">
+        <div class="station-title-group">
+          <h2><span>🎮</span> Live Working Sandboxes (Test-Drive Online)</h2>
+          <p class="text-muted" style="margin-top:4px;">
+            Interact with live simulated versions of my core agent loops, trading bots, and cryptographic verifiers right on this page.
+          </p>
+        </div>
+        <div style="font-size:12px; color:var(--emerald); font-weight:700; background:rgba(16,185,129,0.1); padding:6px 12px; border-radius:8px; border:1px solid rgba(16,185,129,0.3);">
+          ⚡ Live Serverless & Client Execution Active
+        </div>
+      </div>
+
+      <!-- Station Tabs -->
+      <div class="station-tabs">
+        <button class="station-tab-btn active" onclick="switchSandbox('signalpost')">🤖 SignalPost Company Agent</button>
+        <button class="station-tab-btn" onclick="switchSandbox('builderr')">⚡ Builderr Solana Trading Bot</button>
+        <button class="station-tab-btn" onclick="switchSandbox('t3n')">🛡️ TrustGate TEE Enclave Attestation</button>
+        <button class="station-tab-btn" onclick="switchSandbox('coinswag')">🔄 CoinSwag Multi-Chain Privacy Hub</button>
+        <button class="station-tab-btn" onclick="switchSandbox('aibattle')">⚔️ AI Battle Multi-Model Duel</button>
+        <button class="station-tab-btn" onclick="switchSandbox('bitcoincasino')">🎰 Provably-Fair Hash Seed Engine</button>
+      </div>
+
+      <!-- Sandbox 1: SignalPost -->
+      <div id="sandbox-signalpost" class="sandbox-panel active">
+        <div style="margin-bottom:16px;">
+          <h3 style="font-size:18px; margin-bottom:4px;">SignalPost Autonomous Company Intelligence Agent</h3>
+          <p class="text-muted" style="font-size:13px;">
+            State machine agent that parses market telemetry, evaluates growth/risk signals, and synthesizes intelligence dossiers.
+          </p>
+        </div>
+        <div class="sandbox-controls">
+          <input type="text" id="input-company" class="sandbox-input" placeholder="Enter target company (e.g. OpenAI, Stripe, Solana Labs)..." value="Stripe">
+          <button class="btn btn-accent" onclick="runSignalPostSandbox()">⚡ Run Agent Loop</button>
+        </div>
+        <div class="terminal-window" id="terminal-signalpost">
+          <div class="terminal-prompt">// Agent idle. Enter a company name and click "Run Agent Loop" to test drive the state machine...</div>
+        </div>
+      </div>
+
+      <!-- Sandbox 2: Builderr Trading Agent -->
+      <div id="sandbox-builderr" class="sandbox-panel">
+        <div style="margin-bottom:16px;">
+          <h3 style="font-size:18px; margin-bottom:4px;">Builderr Solana High-Speed Algorithmic Trading Agent</h3>
+          <p class="text-muted" style="font-size:13px;">
+            Autonomous SVM order routing, volatility detection, and risk management with sub-180ms execution speed.
+          </p>
+        </div>
+        <div class="sandbox-controls">
+          <button class="btn btn-primary" onclick="runBuilderrSandbox('volatility')">⚡ Trigger Volatility Spike (+4.2%)</button>
+          <button class="btn btn-secondary" onclick="runBuilderrSandbox('stop_loss')">🛑 Test Stop-Loss Evaluator</button>
+        </div>
+        <div class="terminal-window" id="terminal-builderr">
+          <div class="terminal-prompt">// SVM Stream connected. Click a trigger button to test the autonomous trading agent...</div>
+        </div>
+      </div>
+
+      <!-- Sandbox 3: T3N TrustGate TEE -->
+      <div id="sandbox-t3n" class="sandbox-panel">
+        <div style="margin-bottom:16px;">
+          <h3 style="font-size:18px; margin-bottom:4px;">TrustGate T3N Cryptographic Hardware Enclave Verifier</h3>
+          <p class="text-muted" style="font-size:13px;">
+            Hardware enclave policy verification and Ed25519 cryptographic attestation for autonomous AI agents.
+          </p>
+        </div>
+        <div class="sandbox-controls">
+          <button class="btn btn-accent" onclick="runT3nSandbox()">🛡️ Verify TEE Enclave Attestation</button>
+        </div>
+        <div class="terminal-window" id="terminal-t3n">
+          <div class="terminal-prompt">// Cryptographic enclave verifier ready. Click "Verify TEE Enclave Attestation" to run hardware check...</div>
+        </div>
+      </div>
+
+      <!-- Sandbox 4: CoinSwag -->
+      <div id="sandbox-coinswag" class="sandbox-panel">
+        <div style="margin-bottom:16px;">
+          <h3 style="font-size:18px; margin-bottom:4px;">CoinSwag Multi-Chain Crypto Swap & Monero ZK Privacy Hub</h3>
+          <p class="text-muted" style="font-size:13px;">
+            Multi-chain asset routing through ephemeral privacy hops and non-custodial atomic swap channels.
+          </p>
+        </div>
+        <div class="sandbox-controls">
+          <select id="coinswag-from" class="sandbox-input" style="max-width:140px;">
+            <option value="SOL">SOL (Solana)</option>
+            <option value="ETH">ETH (Ethereum)</option>
+            <option value="BTC">BTC (Bitcoin)</option>
+          </select>
+          <span style="color:var(--text-muted); font-size:18px;">➔</span>
+          <select id="coinswag-to" class="sandbox-input" style="max-width:140px;">
+            <option value="XMR" selected>XMR (Monero ZK)</option>
+            <option value="SOL">SOL</option>
+          </select>
+          <button class="btn btn-accent" onclick="runCoinSwagSandbox()">🔄 Route Privacy Hop</button>
+        </div>
+        <div class="terminal-window" id="terminal-coinswag">
+          <div class="terminal-prompt">// Cross-chain swap engine ready. Select pairs and click "Route Privacy Hop"...</div>
+        </div>
+      </div>
+
+      <!-- Sandbox 5: AI Battle -->
+      <div id="sandbox-aibattle" class="sandbox-panel">
+        <div style="margin-bottom:16px;">
+          <h3 style="font-size:18px; margin-bottom:4px;">AI Battle - Multi-Model Adversarial Arena</h3>
+          <p class="text-muted" style="font-size:13px;">
+            Paired model teams challenging and evaluating each other's code generation and vulnerability hardening.
+          </p>
+        </div>
+        <div class="sandbox-controls">
+          <button class="btn btn-accent" onclick="runAiBattleSandbox()">⚔️ Launch Model Challenge Duel</button>
+        </div>
+        <div class="terminal-window" id="terminal-aibattle">
+          <div class="terminal-prompt">// LLM Arena ready. Click "Launch Model Challenge Duel" to simulate real-time multi-model evaluation...</div>
+        </div>
+      </div>
+
+      <!-- Sandbox 6: Bitcoin Casino Provably Fair -->
+      <div id="sandbox-bitcoincasino" class="sandbox-panel">
+        <div style="margin-bottom:16px;">
+          <h3 style="font-size:18px; margin-bottom:4px;">Bitcoin Casino Provably-Fair Cryptographic Seed Engine</h3>
+          <p class="text-muted" style="font-size:13px;">
+            Real-time HMAC-SHA256 outcome verification proving 100% mathematical fairness on client/server seeds.
+          </p>
+        </div>
+        <div class="sandbox-controls">
+          <input type="text" id="casino-client-seed" class="sandbox-input" placeholder="Client Seed" value="fresno_ca_seed_9921">
+          <button class="btn btn-accent" onclick="runCasinoSandbox()">🎰 Calculate Provable Hash</button>
+        </div>
+        <div class="terminal-window" id="terminal-bitcoincasino">
+          <div class="terminal-prompt">// Cryptographic seed generator ready. Click "Calculate Provable Hash" to execute HMAC-SHA256...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Bar for Projects -->
+    <section>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+        <h2 style="font-size:24px; font-weight:800;">📦 Complete Codebases & Featured Systems (12)</h2>
+        <div class="filter-pills-bar" style="margin-bottom:0;">
+          <button class="filter-pill active" onclick="filterProjects('all', this)">All (12)</button>
+          <button class="filter-pill" onclick="filterProjects('live', this)">🟢 Live Online Sites (3)</button>
+          <button class="filter-pill" onclick="filterProjects('agent', this)">🤖 AI Agents (4)</button>
+          <button class="filter-pill" onclick="filterProjects('solana', this)">⚡ Solana & SVM (5)</button>
+          <button class="filter-pill" onclick="filterProjects('trading', this)">📈 Trading Bots (2)</button>
+          <button class="filter-pill" onclick="filterProjects('org', this)">🏢 RJRC Org Builds (6)</button>
+          <button class="filter-pill" onclick="filterProjects('private', this)">🔒 Private / NDA (3)</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+        <!-- Injected via app.js -->
+      </div>
+    </section>
+
+    <!-- Code Audit & Contact CTA -->
+    <section style="margin-top:60px; background:linear-gradient(135deg, rgba(139,92,246,0.1), rgba(6,182,212,0.1)); border:1px solid var(--border-color); border-radius:20px; padding:40px; text-align:center;">
+      <h2 style="font-size:28px; font-weight:800; margin-bottom:12px;">Looking for Full Code Access or a Rapid Prototype?</h2>
+      <p style="color:var(--text-muted); max-width:700px; margin:0 auto 24px auto; font-size:16px;">
+        For private enterprise repositories (such as <code>social.wtf</code>, <code>bitcoin-casino-aop</code>, or proprietary trading models), I provide temporary read-only GitHub collaborator access for technical audits and deep-dive interviews.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="mailto:thepros2014@gmail.com?subject=Code%20Audit%20Access%20Request%20-%20Raymond%20Thomas" class="btn btn-accent btn-large">
+          🔒 Request Private Repo Audit Access
+        </a>
+        <a href="mailto:thepros2014@gmail.com?subject=Vibe%20Coder%20Interview%20/%20Project%20Inquiry" class="btn btn-primary btn-large">
+          💬 Schedule Technical Interview
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:60px; padding:24px 0; border-top:1px solid var(--border-color); text-align:center; color:var(--text-dim); font-size:13px;">
+      Built by Raymond Thomas (@thepros2014 & RJRC-Digital-Development) • Deployed on Vercel • Fresno, CA
+    </footer>
+  </div>
+
+  <!-- In-Page Live Site Preview Modal -->
+  <div id="preview-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="preview-modal-title" style="font-size:16px; font-weight:700;">Live Site Preview</h3>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <a id="preview-modal-link" href="#" target="_blank" class="btn btn-sm btn-primary">Open in New Tab &nearr;</a>
+          <button class="modal-close" onclick="closePreviewModal()">&times;</button>
+        </div>
+      </div>
+      <div class="modal-body" style="padding:16px;">
+        <iframe id="preview-frame" class="preview-iframe" src="about:blank"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="copy-toast">✓ Custom pitch copied to clipboard!</div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
