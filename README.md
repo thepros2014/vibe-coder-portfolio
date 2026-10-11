@@ -11,6 +11,7 @@ The portfolio prominently features and directly links your active deployed produ
 - `Socailwft.apk-` (https://socailmobile.vercel.app) - Mobile Web & Android APK deployment.
 - `cookie-chain-capp` (https://thepros2014.github.io/cookie-chain-capp/) - SVM Micro-Bounties & Tipping DApp.
 - `kracken-auto-trading-bot` (https://rjrc-digital-development.github.io/kracken-auto-trading-bot/) - Live Kraken Bot Telemetry Landing.
+- `ai-battle` (https://payhip.com/ALPHAPO) - Multi-Model AI Arena & Benchmarking (Commercial release & free sample available on Payhip).
 
 Visitors can either click "Visit Live Site ->" or click "In-Page Preview" to test drive them in an interactive modal.
 

@@ -173,23 +173,26 @@
   {
     "id": "aibattle",
     "name": "ai-battle",
-    "live_url": "",
+    "live_url": "https://payhip.com/ALPHAPO",
+    "storefront_url": "https://payhip.com/ALPHAPO",
+    "free_sample_available": true,
     "repo_url": "https://github.com/thepros2014/ai-battle",
     "owner": "thepros2014",
     "owner_type": "personal",
     "visibility": "private",
     "category": "Multi-Model AI Arena & Benchmarking",
     "language": "C# / Python",
-    "velocity": "Adversarial Engine Shipped in 3 Days",
-    "has_live_site": false,
+    "velocity": "Commercial Release Shipped in 3 Days",
+    "has_live_site": true,
     "sandbox_id": "aibattle",
-    "description": "2 paired teams / 4 AI Models challenge system to benchmark LLMs building better products and hardening security.",
+    "description": "2 paired teams / 4 AI Models challenge system to benchmark LLMs building better products and hardening security. Commercial release and free sample available online at Payhip.",
     "highlights": [
+      "Commercial release and free sample available at payhip.com/ALPHAPO",
+      "Interactive in-browser test-drive simulation available below",
       "Multi-LLM competitive collaboration and adversarial testing",
-      "Automated code generation benchmarking and vulnerability probing",
-      "Orchestrated multi-model interaction pipelines"
+      "Automated code generation benchmarking and vulnerability probing"
     ],
-    "keywords": ["multi-agent", "llm benchmark", "ai battle", "c#", "adversarial", "evaluation"]
+    "keywords": ["multi-agent", "llm benchmark", "ai battle", "c#", "adversarial", "evaluation", "payhip", "commercial"]
   },
   {
     "id": "bitcoincasino",

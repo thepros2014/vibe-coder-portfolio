@@ -90,11 +90,13 @@ function renderProjects(projects) {
         <div class="card-footer">
           ${p.has_live_site ? `
             <a href="${p.live_url}" target="_blank" class="btn btn-sm btn-live">
-              Visit Live Site -&gt;
+              ${p.id === 'aibattle' ? 'Payhip Storefront (Free Sample) -&gt;' : 'Visit Live Site -&gt;'}
             </a>
+            ${p.id !== 'aibattle' ? `
             <button class="btn btn-sm btn-secondary" onclick="openPreviewModal('${p.live_url}', '${p.name}')">
               In-Page Preview
             </button>
+            ` : ''}
           ` : ''}
 
           ${p.sandbox_id ? `
