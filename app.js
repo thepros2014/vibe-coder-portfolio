@@ -2,6 +2,7 @@
  * app.js
  * Independent Vercel Portfolio Client Engine
  * Raymond Thomas (@thepros2014 & RJRC-Digital-Development)
+ * Professional technical presentation - No emojis
  */
 
 let projectsData = [];
@@ -16,7 +17,6 @@ async function initProjects() {
     projectsData = await res.json();
   } catch (err) {
     console.warn("Loading local projects fallback:", err);
-    // Embedded fallback
     projectsData = [
       {
         id: "socialwtf",
@@ -51,9 +51,9 @@ function renderProjects(projects) {
     const isOrg = p.owner_type === "organization";
     const isPriv = p.visibility === "private";
     const orgBadgeClass = isOrg ? "org-rjrc" : "org-personal";
-    const orgLabel = isOrg ? `🏢 Org: ${p.owner}` : `👤 Personal: @${p.owner}`;
+    const orgLabel = isOrg ? `ORG: ${p.owner}` : `PERSONAL: @${p.owner}`;
     const visBadgeClass = isPriv ? "vis-badge-private" : "vis-badge-public";
-    const visLabel = isPriv ? "🔒 Private / Commercial" : "🌐 Open Source";
+    const visLabel = isPriv ? "[PRIVATE] Commercial" : "[PUBLIC] Open Source";
 
     return `
       <div class="project-card" data-cat="${p.category.toLowerCase()}" data-owner="${p.owner_type}" data-vis="${p.visibility}">
@@ -62,22 +62,22 @@ function renderProjects(projects) {
             <span class="org-badge ${orgBadgeClass}">${orgLabel}</span>
             <div style="display:flex; gap:6px; align-items:center;">
               ${p.has_live_site ? `
-                <span class="live-indicator"><span class="live-dot"></span> LIVE ONLINE</span>
+                <span class="live-indicator"><span class="live-dot"></span> STATUS: LIVE</span>
               ` : ''}
               <span class="${visBadgeClass}">${visLabel}</span>
             </div>
           </div>
 
           <div class="velocity-pill">
-            <span>⚡</span> ${p.velocity || 'Rapid Zero-to-One Prototype'}
+            <span>[VELOCITY]</span> ${p.velocity || 'Rapid Zero-to-One Prototype'}
           </div>
 
           <a href="${p.live_url || p.repo_url}" target="_blank" class="card-title-link">
-            ${p.name} &nearr;
+            ${p.name} -&gt;
           </a>
 
           <div style="font-size:12px; color:var(--text-dim); margin-bottom:10px; font-family:var(--font-mono);">
-            Category: <strong style="color:var(--cyan);">${p.category}</strong> • Stack: <strong style="color:var(--text-main);">${p.language}</strong>
+            Category: <strong style="color:var(--cyan);">${p.category}</strong> | Stack: <strong style="color:var(--text-main);">${p.language}</strong>
           </div>
 
           <p class="card-desc">${p.description}</p>
@@ -90,25 +90,25 @@ function renderProjects(projects) {
         <div class="card-footer">
           ${p.has_live_site ? `
             <a href="${p.live_url}" target="_blank" class="btn btn-sm btn-live">
-              🚀 Visit Live Site &nearr;
+              Visit Live Site -&gt;
             </a>
             <button class="btn btn-sm btn-secondary" onclick="openPreviewModal('${p.live_url}', '${p.name}')">
-              📱 In-Page Preview
+              In-Page Preview
             </button>
           ` : ''}
 
           ${p.sandbox_id ? `
             <button class="btn btn-sm btn-accent" onclick="jumpToSandbox('${p.sandbox_id}')">
-              ▶️ Test Drive
+              Launch Sandbox -&gt;
             </button>
           ` : ''}
 
           <button class="btn btn-sm btn-secondary" onclick="copyProjectPitch('${p.name}')">
-            📋 Pitch Snippet
+            Copy Pitch Snippet
           </button>
 
           <a href="${p.repo_url}" target="_blank" class="btn btn-sm btn-primary">
-            ${isPriv ? '🔒 Request Code Audit' : '🔗 GitHub Repo'}
+            ${isPriv ? 'Request Code Audit' : 'GitHub Repo'}
           </a>
         </div>
       </div>
@@ -278,13 +278,13 @@ async function runSignalPostSandbox() {
   const data = await callSimulateApi({ sandbox_id: "signalpost", company: company });
   let output = `<span class="terminal-prompt">> [State Loop Initialized]</span>\n`;
   for (const step of data.lifecycle) {
-    output += `<span class="terminal-success">✔ [${step.step}]</span> ${step.msg} <span style="color:#64748b;">(${step.time_ms}ms)</span>\n`;
+    output += `<span class="terminal-success">[OK] [${step.step}]</span> ${step.msg} <span style="color:#64748b;">(${step.time_ms}ms)</span>\n`;
   }
-  output += `\n<strong style="color:#f8fafc;">📊 DOSSIER SYNTHESIZED FOR ${data.dossier.entity.toUpperCase()}:</strong>\n`;
-  output += `• Growth Velocity Score: <span class="terminal-warning">${data.dossier.growth_score}/100</span>\n`;
-  output += `• Key Signals: ${data.dossier.signals.join(" • ")}\n`;
-  output += `• Recommended Pitch Angle: "${data.dossier.recommended_angle}"\n`;
-  output += `<span class="terminal-success">✔ Sub-second Vibe Coder Cycle completed in ${data.dossier.total_time_ms}ms</span>`;
+  output += `\n<strong style="color:#f8fafc;">DOSSIER SYNTHESIZED FOR ${data.dossier.entity.toUpperCase()}:</strong>\n`;
+  output += `* Growth Velocity Score: <span class="terminal-warning">${data.dossier.growth_score}/100</span>\n`;
+  output += `* Key Signals: ${data.dossier.signals.join(" | ")}\n`;
+  output += `* Recommended Pitch Angle: "${data.dossier.recommended_angle}"\n`;
+  output += `<span class="terminal-success">[OK] Sub-second Vibe Coder Cycle completed in ${data.dossier.total_time_ms}ms</span>`;
   term.innerHTML = output;
 }
 
@@ -293,12 +293,12 @@ async function runBuilderrSandbox(actionType) {
   term.innerHTML = `<span class="terminal-prompt">> Triggering Solana SVM event: ${actionType}...</span>\n`;
 
   const data = await callSimulateApi({ sandbox_id: "builderr", action: actionType });
-  let output = `<span class="terminal-success">✔ [SVM SIGNAL DETECTED]</span> Pair: ${data.symbol} | Spot: ${data.spot_price}\n`;
-  output += `• Decision: <span class="terminal-warning">${data.action_triggered}</span>\n`;
-  output += `• High-Speed Latency: <span class="terminal-success">${data.latency_ms}ms</span> (SVM sub-200ms benchmark)\n`;
-  output += `• SVM Slot: #${data.svm_slot} | Slippage: ${data.slippage}\n`;
-  output += `• Transaction Signature: <code>${data.tx_signature}</code>\n`;
-  output += `<span class="terminal-success">✔ ${data.note}</span>`;
+  let output = `<span class="terminal-success">[OK] [SVM SIGNAL DETECTED]</span> Pair: ${data.symbol} | Spot: ${data.spot_price}\n`;
+  output += `* Decision: <span class="terminal-warning">${data.action_triggered}</span>\n`;
+  output += `* High-Speed Latency: <span class="terminal-success">${data.latency_ms}ms</span> (SVM sub-200ms benchmark)\n`;
+  output += `* SVM Slot: #${data.svm_slot} | Slippage: ${data.slippage}\n`;
+  output += `* Transaction Signature: <code>${data.tx_signature}</code>\n`;
+  output += `<span class="terminal-success">[OK] ${data.note}</span>`;
   term.innerHTML = output;
 }
 
@@ -307,12 +307,12 @@ async function runT3nSandbox() {
   term.innerHTML = `<span class="terminal-prompt">> Initializing TrustGate T3N hardware enclave attestation check...</span>\n`;
 
   const data = await callSimulateApi({ sandbox_id: "t3n" });
-  let output = `<span class="terminal-success">✔ [ENCLAVE IDENTIFIED]</span> ${data.enclave_id}\n`;
-  output += `• Attestation Status: <span class="terminal-success">${data.attestation_status}</span>\n`;
-  output += `• Hardware PCR0 Hash: <code>${data.pcr0_measurement}</code>\n`;
-  output += `• Cryptographic Ed25519 Signature: <code>${data.ed25519_signature}...</code>\n`;
-  output += `• Policy Check: <span class="terminal-warning">${data.policy_status}</span>\n`;
-  output += `<span class="terminal-success">✔ Verified in ${data.verification_time_ms}ms without leaking private enclave state</span>`;
+  let output = `<span class="terminal-success">[OK] [ENCLAVE IDENTIFIED]</span> ${data.enclave_id}\n`;
+  output += `* Attestation Status: <span class="terminal-success">${data.attestation_status}</span>\n`;
+  output += `* Hardware PCR0 Hash: <code>${data.pcr0_measurement}</code>\n`;
+  output += `* Cryptographic Ed25519 Signature: <code>${data.ed25519_signature}...</code>\n`;
+  output += `* Policy Check: <span class="terminal-warning">${data.policy_status}</span>\n`;
+  output += `<span class="terminal-success">[OK] Verified in ${data.verification_time_ms}ms without leaking private enclave state</span>`;
   term.innerHTML = output;
 }
 
@@ -323,11 +323,11 @@ async function runCoinSwagSandbox() {
   term.innerHTML = `<span class="terminal-prompt">> Initiating non-custodial privacy routing for ${fromTok} -> ${toTok}...</span>\n`;
 
   const data = await callSimulateApi({ sandbox_id: "coinswag", from_token: fromTok, to_token: toTok, amount: 2.5 });
-  let output = `<span class="terminal-success">✔ [ROUTE COMPUTED]</span> ${data.route}\n`;
-  output += `• Sent: ${data.amount_sent} ➔ Received: <span class="terminal-success">${data.amount_received}</span>\n`;
-  output += `• RingCT Anonymity Set: <span class="terminal-warning">Ring Size ${data.ring_size}</span>\n`;
-  output += `• Zero-Knowledge Proof: ${data.zk_proof}\n`;
-  output += `<span class="terminal-success">✔ Privacy Shield Status: ${data.anonymity_score}</span>`;
+  let output = `<span class="terminal-success">[OK] [ROUTE COMPUTED]</span> ${data.route}\n`;
+  output += `* Sent: ${data.amount_sent} -> Received: <span class="terminal-success">${data.amount_received}</span>\n`;
+  output += `* RingCT Anonymity Set: <span class="terminal-warning">Ring Size ${data.ring_size}</span>\n`;
+  output += `* Zero-Knowledge Proof: ${data.zk_proof}\n`;
+  output += `<span class="terminal-success">[OK] Privacy Shield Status: ${data.anonymity_score}</span>`;
   term.innerHTML = output;
 }
 
@@ -336,10 +336,10 @@ async function runAiBattleSandbox() {
   term.innerHTML = `<span class="terminal-prompt">> Launching 2 paired teams / 4 AI models duel challenge...</span>\n`;
 
   const data = await callSimulateApi({ sandbox_id: "aibattle" });
-  let output = `<span class="terminal-success">✔ [DUEL CHALLENGE]</span> ${data.duel}\n`;
-  output += `• ${data.model_a.name}: Score <span class="terminal-warning">${data.model_a.score}/100</span> (${data.model_a.verdict})\n`;
-  output += `• ${data.model_b.name}: Score <span class="terminal-warning">${data.model_b.score}/100</span> (${data.model_b.verdict})\n`;
-  output += `<span class="terminal-success">✔ Synthesis: ${data.synthesis}</span>`;
+  let output = `<span class="terminal-success">[OK] [DUEL CHALLENGE]</span> ${data.duel}\n`;
+  output += `* ${data.model_a.name}: Score <span class="terminal-warning">${data.model_a.score}/100</span> (${data.model_a.verdict})\n`;
+  output += `* ${data.model_b.name}: Score <span class="terminal-warning">${data.model_b.score}/100</span> (${data.model_b.verdict})\n`;
+  output += `<span class="terminal-success">[OK] Synthesis: ${data.synthesis}</span>`;
   term.innerHTML = output;
 }
 
@@ -349,12 +349,12 @@ async function runCasinoSandbox() {
   term.innerHTML = `<span class="terminal-prompt">> Calculating cryptographic HMAC-SHA256 provably fair roll...</span>\n`;
 
   const data = await callSimulateApi({ sandbox_id: "bitcoincasino", client_seed: clientSeed, nonce: 42 });
-  let output = `<span class="terminal-success">✔ [PROVABLY FAIR VERIFICATION SUCCESSFUL]</span>\n`;
-  output += `• Client Seed: <code>${data.client_seed}</code>\n`;
-  output += `• Server Seed Hash (SHA-256): <code>${data.server_seed_hash}</code>\n`;
-  output += `• HMAC-SHA256 Result: <code>${data.hmac_sha256_result}</code>\n`;
-  output += `• Calculated Roll Value: <span class="terminal-warning" style="font-size:16px; font-weight:800;">${data.provably_fair_roll}</span>\n`;
-  output += `<span class="terminal-success">✔ Outcome independently mathematically verifiable by player</span>`;
+  let output = `<span class="terminal-success">[OK] [PROVABLY FAIR VERIFICATION SUCCESSFUL]</span>\n`;
+  output += `* Client Seed: <code>${data.client_seed}</code>\n`;
+  output += `* Server Seed Hash (SHA-256): <code>${data.server_seed_hash}</code>\n`;
+  output += `* HMAC-SHA256 Result: <code>${data.hmac_sha256_result}</code>\n`;
+  output += `* Calculated Roll Value: <span class="terminal-warning" style="font-size:16px; font-weight:800;">${data.provably_fair_roll}</span>\n`;
+  output += `<span class="terminal-success">[OK] Outcome independently mathematically verifiable by player</span>`;
   term.innerHTML = output;
 }
 
@@ -366,13 +366,13 @@ function copyProjectPitch(projName) {
   const pitch = `Hi team,\n\nI came across your opening and wanted to reach out directly. I'm a full-stack engineer and AI prototyper (Vibe Coder) based in Fresno, CA, shipping production systems in days, not months.\n\nA directly relevant system I've built and deployed is ${proj.name} (${proj.repo_url}):\n${proj.description}\n\n${liveClause}- Key Highlights: ${(proj.highlights || []).join('; ')}\n- Stack: ${proj.language}\n- Development Velocity: ${proj.velocity || 'Shipped in days'}\n\nYou can test-drive working interactive sandboxes of my systems directly in my live portfolio: https://raymond-thomas-portfolio.vercel.app\n\nLooking forward to delivering a working prototype for your team in the first 48 hours.\n\nBest,\nRaymond Thomas\nthepros2014@gmail.com`;
 
   navigator.clipboard.writeText(pitch).then(() => {
-    showToast("✓ Custom pitch copied to clipboard!");
+    showToast("Custom pitch copied to clipboard!");
   }).catch(() => {
-    showToast("✓ Custom pitch ready!");
+    showToast("Custom pitch ready!");
   });
 }
 
-function showToast(msg = "✓ Copied to clipboard!") {
+function showToast(msg = "Copied to clipboard!") {
   const t = document.getElementById("copy-toast");
   t.innerText = msg;
   t.classList.add("show");

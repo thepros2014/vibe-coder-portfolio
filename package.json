@@ -4,6 +4,7 @@
   "description": "Vibe Coder & Full-Stack AI Engineer Portfolio - Live Interactive Sandboxes (Vercel Ready)",
   "main": "index.html",
   "scripts": {
+    "build": "echo 'Build completed'",
     "start": "npx serve .",
     "deploy": "vercel --prod"
   },
