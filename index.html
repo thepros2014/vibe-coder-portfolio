@@ -6,6 +6,7 @@
   <title>Raymond Thomas | Vibe Coder & AI Engineer Portfolio</title>
   <meta name="description" content="Autonomous AI Agent Architect, Solana/SVM Systems, and Rapid Zero-to-One Prototyper. Featuring live online working sandboxes and deployed production sites.">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./sandboxes.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -71,136 +72,245 @@
     </section>
 
     <!-- Live Working Sandboxes Station -->
-    <section class="sandbox-station">
+    <section class="sandbox-station" id="sandboxes">
       <div class="station-header">
         <div class="station-title-group">
-          <h2>Live Working Sandboxes (Test-Drive Online)</h2>
+          <h2>Live Working Demos (Try Them Now)</h2>
           <p class="text-muted" style="margin-top:4px;">
-            Interact with live simulated versions of my core agent loops, trading bots, and cryptographic verifiers right on this page.
+            Fully interactive: change inputs, move sliders, and watch each system respond in real time. Everything runs in your browser, so no private source code is ever exposed.
           </p>
         </div>
         <div style="font-size:12px; color:var(--emerald); font-weight:700; background:rgba(16,185,129,0.1); padding:6px 12px; border-radius:8px; border:1px solid rgba(16,185,129,0.3);">
-          Live Serverless & Client Execution Active
+          Interactive - Runs In Your Browser
         </div>
       </div>
 
-      <!-- Station Tabs -->
-      <div class="station-tabs">
-        <button class="station-tab-btn active" onclick="switchSandbox('signalpost')">SignalPost Company Agent</button>
-        <button class="station-tab-btn" onclick="switchSandbox('builderr')">Builderr Solana Trading Bot</button>
-        <button class="station-tab-btn" onclick="switchSandbox('t3n')">TrustGate TEE Enclave Attestation</button>
-        <button class="station-tab-btn" onclick="switchSandbox('coinswag')">CoinSwag Multi-Chain Privacy Hub</button>
-        <button class="station-tab-btn" onclick="switchSandbox('aibattle')">AI Battle Multi-Model Duel</button>
-        <button class="station-tab-btn" onclick="switchSandbox('bitcoincasino')">Provably-Fair Hash Seed Engine</button>
+      <div class="station-tabs" role="tablist" aria-label="Interactive demos">
+        <button class="station-tab-btn active" role="tab" aria-selected="true" data-sandbox="signalpost">SignalPost Agent</button>
+        <button class="station-tab-btn" role="tab" aria-selected="false" tabindex="-1" data-sandbox="builderr">Builderr Trading Bot</button>
+        <button class="station-tab-btn" role="tab" aria-selected="false" tabindex="-1" data-sandbox="t3n">TrustGate Attestation</button>
+        <button class="station-tab-btn" role="tab" aria-selected="false" tabindex="-1" data-sandbox="coinswag">CoinSwag Privacy Swap</button>
+        <button class="station-tab-btn" role="tab" aria-selected="false" tabindex="-1" data-sandbox="aibattle">AI Battle Arena</button>
+        <button class="station-tab-btn" role="tab" aria-selected="false" tabindex="-1" data-sandbox="bitcoincasino">Provably-Fair Engine</button>
       </div>
 
-      <!-- Sandbox 1: SignalPost -->
-      <div id="sandbox-signalpost" class="sandbox-panel active">
-        <div style="margin-bottom:16px;">
-          <h3 style="font-size:18px; margin-bottom:4px;">SignalPost Autonomous Company Intelligence Agent</h3>
-          <p class="text-muted" style="font-size:13px;">
-            State machine agent that parses market telemetry, evaluates growth/risk signals, and synthesizes intelligence dossiers.
-          </p>
+      <!-- 1. SignalPost -->
+      <div id="sandbox-signalpost" class="sandbox-panel active" role="tabpanel">
+        <div class="sb-head">
+          <h3>SignalPost Autonomous Company Intelligence Agent</h3>
+          <p>A state-machine agent with an evaluator loop. Raise the confidence threshold and watch it retry until the dossier passes verification.</p>
         </div>
-        <div class="sandbox-controls">
-          <input type="text" id="input-company" class="sandbox-input" placeholder="Enter target company (e.g. OpenAI, Stripe, Solana Labs)..." value="Stripe">
-          <button class="btn btn-accent" onclick="runSignalPostSandbox()">Run Agent Loop</button>
-        </div>
-        <div class="terminal-window" id="terminal-signalpost">
-          <div class="terminal-prompt">// Agent idle. Enter a company name and click "Run Agent Loop" to test drive the state machine...</div>
-        </div>
-      </div>
-
-      <!-- Sandbox 2: Builderr Trading Agent -->
-      <div id="sandbox-builderr" class="sandbox-panel">
-        <div style="margin-bottom:16px;">
-          <h3 style="font-size:18px; margin-bottom:4px;">Builderr Solana High-Speed Algorithmic Trading Agent</h3>
-          <p class="text-muted" style="font-size:13px;">
-            Autonomous SVM order routing, volatility detection, and risk management with sub-180ms execution speed.
-          </p>
-        </div>
-        <div class="sandbox-controls">
-          <button class="btn btn-primary" onclick="runBuilderrSandbox('volatility')">Trigger Volatility Spike (+4.2%)</button>
-          <button class="btn btn-secondary" onclick="runBuilderrSandbox('stop_loss')">Test Stop-Loss Evaluator</button>
-        </div>
-        <div class="terminal-window" id="terminal-builderr">
-          <div class="terminal-prompt">// SVM Stream connected. Click a trigger button to test the autonomous trading agent...</div>
-        </div>
-      </div>
-
-      <!-- Sandbox 3: T3N TrustGate TEE -->
-      <div id="sandbox-t3n" class="sandbox-panel">
-        <div style="margin-bottom:16px;">
-          <h3 style="font-size:18px; margin-bottom:4px;">TrustGate T3N Cryptographic Hardware Enclave Verifier</h3>
-          <p class="text-muted" style="font-size:13px;">
-            Hardware enclave policy verification and Ed25519 cryptographic attestation for autonomous AI agents.
-          </p>
-        </div>
-        <div class="sandbox-controls">
-          <button class="btn btn-accent" onclick="runT3nSandbox()">Verify TEE Enclave Attestation</button>
-        </div>
-        <div class="terminal-window" id="terminal-t3n">
-          <div class="terminal-prompt">// Cryptographic enclave verifier ready. Click "Verify TEE Enclave Attestation" to run hardware check...</div>
+        <div class="sb-grid">
+          <div class="sb-col">
+            <div class="sb-form">
+              <label for="sp-company">Target company</label>
+              <div class="sb-row">
+                <input type="text" id="sp-company" class="sandbox-input" value="Stripe" maxlength="60" autocomplete="off" placeholder="Enter any company">
+                <button class="btn btn-accent" id="sp-run">Run Agent Loop</button>
+              </div>
+              <div class="sb-chips" id="sp-chips">
+                <button type="button" data-company="OpenAI">OpenAI</button>
+                <button type="button" data-company="Stripe">Stripe</button>
+                <button type="button" data-company="Solana Labs">Solana Labs</button>
+                <button type="button" data-company="Vercel">Vercel</button>
+              </div>
+              <label for="sp-threshold">Evaluator confidence threshold: <span id="sp-thr-val">85</span>%</label>
+              <input type="range" id="sp-threshold" min="60" max="99" value="85">
+            </div>
+            <ol class="sb-stepper" id="sp-steps">
+              <li>DISCOVERY</li><li>SIGNALS</li><li>EVALUATOR</li><li>DOSSIER</li>
+            </ol>
+            <div class="terminal-window" id="sp-log" aria-live="polite"></div>
+          </div>
+          <div class="sb-col">
+            <div class="sb-card" id="sp-dossier" hidden></div>
+            <div class="sb-note">The dossier is deterministic per company name, so the same input always produces the same signals. Change the threshold to see retries.</div>
+          </div>
         </div>
       </div>
 
-      <!-- Sandbox 4: CoinSwag -->
-      <div id="sandbox-coinswag" class="sandbox-panel">
-        <div style="margin-bottom:16px;">
-          <h3 style="font-size:18px; margin-bottom:4px;">CoinSwag Multi-Chain Crypto Swap & Monero ZK Privacy Hub</h3>
-          <p class="text-muted" style="font-size:13px;">
-            Multi-chain asset routing through ephemeral privacy hops and non-custodial atomic swap channels.
-          </p>
+      <!-- 2. Builderr -->
+      <div id="sandbox-builderr" class="sandbox-panel" role="tabpanel">
+        <div class="sb-head">
+          <h3>Builderr Solana Algorithmic Trading Agent</h3>
+          <p>A live simulated market feed. The agent enters on momentum and manages stop-loss and take-profit. Inject volatility or trade manually.</p>
         </div>
-        <div class="sandbox-controls">
-          <select id="coinswag-from" class="sandbox-input" style="max-width:140px;">
-            <option value="SOL">SOL (Solana)</option>
-            <option value="ETH">ETH (Ethereum)</option>
-            <option value="BTC">BTC (Bitcoin)</option>
-          </select>
-          <span style="color:var(--text-muted); font-size:16px; font-weight:700;">-&gt;</span>
-          <select id="coinswag-to" class="sandbox-input" style="max-width:140px;">
-            <option value="XMR" selected>XMR (Monero ZK)</option>
-            <option value="SOL">SOL</option>
-          </select>
-          <button class="btn btn-accent" onclick="runCoinSwagSandbox()">Route Privacy Hop</button>
-        </div>
-        <div class="terminal-window" id="terminal-coinswag">
-          <div class="terminal-prompt">// Cross-chain swap engine ready. Select pairs and click "Route Privacy Hop"...</div>
-        </div>
-      </div>
-
-      <!-- Sandbox 5: AI Battle -->
-      <div id="sandbox-aibattle" class="sandbox-panel">
-        <div style="margin-bottom:16px;">
-          <h3 style="font-size:18px; margin-bottom:4px;">AI Battle - Multi-Model Adversarial Arena</h3>
-          <p class="text-muted" style="font-size:13px;">
-            Paired model teams challenging and evaluating each other's code generation and vulnerability hardening. Commercial edition and free sample available online at Payhip.
-          </p>
-        </div>
-        <div class="sandbox-controls">
-          <button class="btn btn-accent" onclick="runAiBattleSandbox()">Launch Model Challenge Duel</button>
-          <a href="https://payhip.com/ALPHAPO" target="_blank" class="btn btn-primary">Payhip Storefront &amp; Free Sample -&gt;</a>
-        </div>
-        <div class="terminal-window" id="terminal-aibattle">
-          <div class="terminal-prompt">// LLM Arena ready. Click "Launch Model Challenge Duel" to test drive the free simulation, or visit Payhip for the full build...</div>
+        <div class="sb-grid">
+          <div class="sb-col">
+            <div class="bd-stats">
+              <div class="bd-stat"><span>Price</span><b id="bd-price">--</b></div>
+              <div class="bd-stat"><span>Position</span><b id="bd-pos">FLAT</b></div>
+              <div class="bd-stat"><span>Total P/L</span><b id="bd-pnl">0.00 USD</b></div>
+              <div class="bd-stat"><span>Trades</span><b id="bd-trades">0</b></div>
+              <div class="bd-stat"><span>Route latency</span><b id="bd-lat">-- ms</b></div>
+              <div class="bd-stat"><span>SVM slot</span><b id="bd-slot">--</b></div>
+            </div>
+            <div class="bd-chart-wrap"><canvas id="bd-chart" aria-label="Live price chart"></canvas></div>
+          </div>
+          <div class="sb-col">
+            <div class="sb-btns">
+              <button class="btn btn-primary" id="bd-spike">Volatility Spike</button>
+              <button class="btn btn-secondary" id="bd-crash">Price Drop</button>
+              <button class="btn btn-accent" id="bd-buy">Buy (Long)</button>
+              <button class="btn btn-secondary" id="bd-sell">Sell (Short)</button>
+              <button class="btn btn-secondary" id="bd-close">Close Position</button>
+              <button class="btn btn-secondary" id="bd-reset">Reset</button>
+            </div>
+            <div class="sb-form">
+              <label class="sb-check"><input type="checkbox" id="bd-auto" checked> Autonomous agent enabled</label>
+              <label for="bd-trig">Momentum trigger: <span id="bd-trig-val">0.6</span>%</label>
+              <input type="range" id="bd-trig" min="0.2" max="1.5" step="0.1" value="0.6">
+              <label for="bd-sl">Stop-loss: <span id="bd-sl-val">0.8</span>%</label>
+              <input type="range" id="bd-sl" min="0.2" max="3" step="0.1" value="0.8">
+              <label for="bd-tp">Take-profit: <span id="bd-tp-val">1.2</span>%</label>
+              <input type="range" id="bd-tp" min="0.2" max="4" step="0.1" value="1.2">
+            </div>
+            <div class="terminal-window" id="bd-log" aria-live="polite"></div>
+          </div>
         </div>
       </div>
 
-      <!-- Sandbox 6: Bitcoin Casino Provably Fair -->
-      <div id="sandbox-bitcoincasino" class="sandbox-panel">
-        <div style="margin-bottom:16px;">
-          <h3 style="font-size:18px; margin-bottom:4px;">Bitcoin Casino Provably-Fair Cryptographic Seed Engine</h3>
-          <p class="text-muted" style="font-size:13px;">
-            Real-time HMAC-SHA256 outcome verification proving 100% mathematical fairness on client/server seeds.
-          </p>
+      <!-- 3. TrustGate / T3N -->
+      <div id="sandbox-t3n" class="sandbox-panel" role="tabpanel">
+        <div class="sb-head">
+          <h3>TrustGate Policy Enforcement and Cryptographic Attestation</h3>
+          <p>Define a policy, submit an agent request, and receive a signed attestation. Then forge the quote and watch verification reject it.</p>
         </div>
-        <div class="sandbox-controls">
-          <input type="text" id="casino-client-seed" class="sandbox-input" placeholder="Client Seed" value="fresno_ca_seed_9921">
-          <button class="btn btn-accent" onclick="runCasinoSandbox()">Calculate Provable Hash</button>
+        <div class="sb-grid">
+          <div class="sb-col">
+            <div class="sb-form">
+              <label for="t3-action">Agent action</label>
+              <select id="t3-action" class="sandbox-input">
+                <option value="transfer">Transfer funds</option>
+                <option value="swap">Execute swap</option>
+                <option value="deploy">Deploy contract</option>
+              </select>
+              <label for="t3-amount">Amount (USDC)</label>
+              <input type="number" id="t3-amount" class="sandbox-input" value="250" min="0" step="1" inputmode="decimal">
+              <label for="t3-dest">Destination</label>
+              <select id="t3-dest" class="sandbox-input">
+                <option value="treasury">Treasury wallet (allowlisted)</option>
+                <option value="vendor">Approved vendor (allowlisted)</option>
+                <option value="unknown">Unknown address</option>
+              </select>
+              <label for="t3-max">Policy: max amount per request: <span id="t3-max-val">500</span> USDC</label>
+              <input type="range" id="t3-max" min="50" max="2000" step="50" value="500">
+              <label class="sb-check"><input type="checkbox" id="t3-allow" checked> Require allowlisted destination</label>
+            </div>
+            <div class="sb-btns">
+              <button class="btn btn-accent" id="t3-run">Request Attestation</button>
+              <button class="btn btn-secondary" id="t3-tamper" disabled>Tamper Test</button>
+            </div>
+          </div>
+          <div class="sb-col">
+            <div class="terminal-window" id="t3-log" aria-live="polite"></div>
+            <div class="sb-card" id="t3-result" hidden></div>
+          </div>
         </div>
-        <div class="terminal-window" id="terminal-bitcoincasino">
-          <div class="terminal-prompt">// Cryptographic seed generator ready. Click "Calculate Provable Hash" to execute HMAC-SHA256...</div>
+      </div>
+
+      <!-- 4. CoinSwag -->
+      <div id="sandbox-coinswag" class="sandbox-panel" role="tabpanel">
+        <div class="sb-head">
+          <h3>CoinSwag Multi-Chain Swap and Privacy Hub</h3>
+          <p>Live quote engine. Change the pair, amount, or ring size and the quote updates instantly, then route the swap through the privacy hops.</p>
+        </div>
+        <div class="sb-grid">
+          <div class="sb-col">
+            <div class="sb-form">
+              <label for="cs-amount">Amount to send</label>
+              <input type="number" id="cs-amount" class="sandbox-input" value="2.5" min="0" step="any" inputmode="decimal">
+              <div class="sb-row">
+                <select id="cs-from" class="sandbox-input" aria-label="From asset">
+                  <option value="SOL" selected>SOL</option><option value="ETH">ETH</option><option value="BTC">BTC</option><option value="USDC">USDC</option><option value="XMR">XMR</option>
+                </select>
+                <button class="btn btn-secondary" id="cs-flip" type="button" aria-label="Swap direction">Flip</button>
+                <select id="cs-to" class="sandbox-input" aria-label="To asset">
+                  <option value="XMR" selected>XMR (Monero)</option><option value="SOL">SOL</option><option value="ETH">ETH</option><option value="BTC">BTC</option><option value="USDC">USDC</option>
+                </select>
+              </div>
+              <label for="cs-ring">Privacy ring size: <span id="cs-ring-val">16</span></label>
+              <input type="range" id="cs-ring" min="11" max="64" step="1" value="16">
+            </div>
+            <div class="sb-card" id="cs-quote"></div>
+            <button class="btn btn-accent" id="cs-run">Route Privacy Hop</button>
+          </div>
+          <div class="sb-col">
+            <ul class="sb-path" id="cs-path"></ul>
+            <div class="terminal-window" id="cs-log" aria-live="polite"></div>
+            <div class="sb-note">Rates are illustrative and fixed for the demo. The routing flow, fee model, and anonymity-set math are the real logic.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. AI Battle -->
+      <div id="sandbox-aibattle" class="sandbox-panel" role="tabpanel">
+        <div class="sb-head">
+          <h3>AI Battle - Multi-Model Adversarial Arena</h3>
+          <p>Two teams of AI models build and attack each other's work. Pick a challenge and watch the scores move round by round. Commercial edition and free sample available on Payhip.</p>
+        </div>
+        <div class="sb-form" style="margin-bottom:14px;">
+          <div class="sb-row">
+            <select id="ab-challenge" class="sandbox-input" aria-label="Challenge">
+              <option value="race">Race-condition audit on a payment queue</option>
+              <option value="sqli">Harden a login endpoint against injection</option>
+              <option value="perf">Optimize a hot-path parser for 10x throughput</option>
+              <option value="refactor">Refactor a legacy module without breaking tests</option>
+            </select>
+            <button class="btn btn-accent" id="ab-run">Start Duel</button>
+            <a href="https://payhip.com/ALPHAPO" target="_blank" rel="noopener" class="btn btn-primary">Payhip Storefront and Free Sample -&gt;</a>
+          </div>
+          <label for="ab-rounds">Rounds: <span id="ab-rounds-val">3</span></label>
+          <input type="range" id="ab-rounds" min="1" max="6" value="3">
+        </div>
+        <div class="sb-teams">
+          <div class="sb-team" id="ab-team-a"></div>
+          <div class="sb-team" id="ab-team-b"></div>
+        </div>
+        <div class="sb-verdict" id="ab-verdict" hidden></div>
+        <div class="terminal-window" id="ab-log" style="margin-top:14px;" aria-live="polite"></div>
+      </div>
+
+      <!-- 6. Provably fair -->
+      <div id="sandbox-bitcoincasino" class="sandbox-panel" role="tabpanel">
+        <div class="sb-head">
+          <h3>Provably-Fair Cryptographic Engine</h3>
+          <p>Real HMAC-SHA256 running in your browser. The server seed is committed up front, every roll is reproducible, and you can reveal and verify the whole session. Play money only.</p>
+        </div>
+        <div class="sb-grid">
+          <div class="sb-col">
+            <div class="sb-form">
+              <label>Server seed commitment (SHA-256)</label>
+              <div class="pf-hash" id="pf-commit">--</div>
+              <label for="pf-client">Client seed</label>
+              <input type="text" id="pf-client" class="sandbox-input" value="fresno_ca_seed_9921" maxlength="40" autocomplete="off">
+              <div class="sb-row">
+                <select id="pf-mode" class="sandbox-input" aria-label="Roll mode">
+                  <option value="over">Roll over</option><option value="under">Roll under</option>
+                </select>
+                <input type="number" id="pf-bet" class="sandbox-input" value="10" min="1" step="1" inputmode="decimal" aria-label="Bet amount">
+              </div>
+              <label for="pf-target">Target: <span id="pf-target-val">50</span></label>
+              <input type="range" id="pf-target" min="2" max="98" value="50">
+              <div class="pf-meta"><span>Nonce <b id="pf-nonce">0</b></span><span>Balance <b id="pf-balance">1,000.00</b></span></div>
+              <div class="pf-meta" id="pf-stats"></div>
+            </div>
+            <div class="sb-btns">
+              <button class="btn btn-accent" id="pf-roll-btn">Roll</button>
+              <button class="btn btn-secondary" id="pf-reveal" disabled>Reveal and Verify</button>
+              <button class="btn btn-secondary" id="pf-rotate">New Seed</button>
+            </div>
+          </div>
+          <div class="sb-col">
+            <div class="pf-display" id="pf-display">--</div>
+            <div class="sb-card" id="pf-proof" hidden></div>
+            <div class="sb-table-wrap">
+              <table class="sb-table" aria-label="Roll history">
+                <thead><tr><th>Nonce</th><th>Client seed</th><th>Roll</th><th>Result</th></tr></thead>
+                <tbody id="pf-history"></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -267,5 +377,6 @@
   <div id="copy-toast">Custom pitch copied to clipboard!</div>
 
   <script src="./app.js"></script>
+  <script src="./sandboxes.js"></script>
 </body>
 </html>
